@@ -1,0 +1,15 @@
+<div class="container background">
+		<div class="container todo-list wrapper">
+			<fieldset>
+				<div class="todo-item" *ngFor="let filter of filters" [class.completed]="filter.selected">
+					<button class="checkbox icon" (click)="onToggleShopCategory(filter)">
+						<i class="material-icons">{{ filter.selected ? 'check_box' : 'check_box_outline_blank' }}</i>
+					</button>
+					<span class="title">{{ filter.category }}</span>
+				</div>
+			</fieldset>
+			<button class="main-button" (click)="onSelectAllCategories(filters)">
+				See all products
+			</button>
+		</div>
+	</div>

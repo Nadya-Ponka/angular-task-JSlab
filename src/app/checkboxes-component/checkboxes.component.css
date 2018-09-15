@@ -1,0 +1,23 @@
+.main-button {
+  background-color: #aa9b77;
+  color: white;
+  border-radius: 4px;
+  margin-left: auto;
+  font-size: 12px;
+}
+
+@media (max-width: 560px) {
+  .main-button {
+    display: none;
+  }
+
+  .todo-list {
+    justify-content: center;
+  }
+}
+
+fieldset {
+	border: none;
+	padding:0px;
+	margin:0;
+}

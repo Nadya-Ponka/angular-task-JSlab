@@ -1,0 +1,10 @@
+<section>
+  <checkboxes-element (toggleShopCategory)="toggleShopCategory()" (selectAllCategories)="selectAllCategories()"
+    [filters]="filters"></checkboxes-element>
+</section>
+
+<sorts-element (sortItemsByField)="sortItemsByField($event)"></sorts-element>
+
+<main>
+  <shop [filters]="filters" [message]="message" [items]="items" [carouselTileItems]="carouselTileItems" ></shop>
+</main>

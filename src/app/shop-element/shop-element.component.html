@@ -1,0 +1,57 @@
+<!-- <div class="shop-item">
+  <div *ngIf="item.size.length > 1; then thenBlock else elseBlock"></div>
+  <ng-template #thenBlock>
+    <form>
+      <select onclick="event.stopPropagation()">
+        <option [value]="null" disabled selected>Size</option>
+        <option [value]="sizeVariable" *ngFor="let sizeVariable of item.size">{{ sizeVariable }}</option>
+      </select>
+    </form>
+  </ng-template>
+  <ng-template #elseBlock>
+    <span>{{item.size[0]}}</span>
+	</ng-template>
+	<div class="colors">
+    <span *ngFor="let col of item.colors" class="color" [ngStyle]="{ 'background-color': col }"></span>
+	</div>
+
+  <div><img src="../assets/images/products/{{ item.image }}.png" /></div>
+  <div class="data">
+    <div class="right">{{ item.price | number:'1.2'}}€</div>
+    <div>PRICE</div>
+    <div>
+      <span *ngFor="let sizeVariable of item.size">
+        {{ sizeVariable | uppercase }},
+      </span>
+    </div>
+    <div>SIZE</div>
+  </div> -->
+
+  <table class="shop-item">
+  <tr>
+    <td>
+			<div *ngIf="item.size.length > 1; then thenBlock else elseBlock"></div>
+      <ng-template #thenBlock>
+        <form>
+          <select onclick="event.stopPropagation()">
+            <option [value]="null" disabled selected>Size</option>
+            <option [value]="sizeVariable" *ngFor="let sizeVariable of item.size">{{ sizeVariable }}</option>
+          </select>
+        </form>
+      </ng-template>
+      <ng-template #elseBlock>
+				<span>{{item.size[0]}}</span>
+      </ng-template>
+    </td>
+    <td class="right">
+      <span *ngFor="let col of item.colors" class="color" [ngStyle]="{ 'background-color': col }"></span>
+    </td>
+  </tr>
+  <tr class="center">
+    <td colspan="2"><img src="../assets/images/products/{{ item.image }}.png" /></td>
+  </tr>
+  <tr>
+    <td class="product-name">{{ item.name | uppercase }}</td>
+    <td class="right">{{ item.price | number:'1.2'}}€</td>
+  </tr>
+</table>

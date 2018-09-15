@@ -1,0 +1,9 @@
+<section class="wrapper">
+		<form>
+			<h3 class="sort">Sort by</h3>
+			<select (change)="onSortItemsByField($event.target.value)" class="sort">
+				<option [value]="null" disabled ></option>
+				<option [value]="sort" *ngFor="let sort of sortBy">{{ sort }}</option>
+			</select>
+		</form>
+	</section>

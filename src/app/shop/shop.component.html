@@ -1,0 +1,22 @@
+<h3 style="font-size: 30px;">{{ message }}</h3>
+
+<div class="wrapper">
+  <ng-container *ngFor="let filter of filters; let j = index;">
+    <ng-container *ngIf="filter.selected">
+      <div class="full-justify">
+        <h2>{{ filter.category | uppercase }}</h2>
+        <hr class="right">
+      </div>
+
+      <ngu-carousel [inputs]="carouselTile">
+        <button NguCarouselPrev class="leftRs" style="display:inline-block;">&lt;</button>
+        <button NguCarouselNext class="rightRs" style="display:inline-block;">&gt;</button>
+
+        <!-- (carouselLoad)="carouselTileLoad()" -->
+        <ngu-tile NguCarouselItem *ngFor="let item of carouselTileItems[j]; let i = index;">
+          <shop-element [item]=item (click)="goTo(item)"></shop-element>
+        </ngu-tile>
+      </ngu-carousel>
+    </ng-container>
+  </ng-container>
+</div>

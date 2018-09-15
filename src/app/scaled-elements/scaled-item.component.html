@@ -1,0 +1,32 @@
+<section>
+  <div class="background">
+    <div class="todo-list wrapper">
+      <button class="back-button" (click)="backCatalogue()">&lt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Back to catalogue</button>
+    </div>
+  </div>
+
+  <div class="full-justify wrapper">
+    <h2>{{ whose | uppercase }}</h2>
+    <hr class="right">
+  </div>
+
+  <div class="wrapper">
+    <div class="shop-item scaled">
+      <div><img src="../assets/images/products/{{ image }}.png" /></div>
+      <div class="data">
+        <div class="right">{{ price | number:'1.2'}}€</div>
+        <div>PRICE</div>
+        <div>
+          <span *ngFor="let sizeVariable of size">
+            {{ sizeVariable | uppercase }},
+          </span>
+        </div>
+        <div>SIZE</div>
+        <div>
+          <span *ngFor="let col of colors" class="color" [ngStyle]="{ 'background-color': col }"></span>
+        </div>
+        <div>COLORS</div>
+      </div>
+    </div>
+  </div>
+</section>
